@@ -1,0 +1,158 @@
+<section id="content" class="wrapper-alt"> 
+    <!-- Begin Panel 1: User Selects Location and Opt-Out for Username -->
+    <div id="page1" style="display:none;">
+      <header>
+        <h2 class="align-center">Before You Begin</h2>
+        <p>TRIVI/O is a game for everyone, but you can only win a prize if you are at one of the I/O extended events. You must be physically present at one of these locations to receive your prize. You can still track your score and progress if you are at another location by entering your zip code/postal code. Please refer to the FAQ for more details.</p>
+      </header>
+      <form id="disclaimer">
+        <div class="row uniform">
+          <div class="12u$">
+            <label for="location"><strong>I/O City or Zip Code/Postal Code:</strong></label>
+            <div id="location" class="select-wrapper">
+              <select name="city" id="city">
+                <option value="AUS">Austin, TX, USA</option>
+                <option value="BLD">Boulder, CO, USA</option>
+                <option value="CAM">Cambridge, MA, USA</option>
+                <option value="LAX">Los Angeles, CA, USA</option>
+                <option value="NYC">New York City, New York, USA</option>
+                <option value="PIT">Pittsburgh, PA, USA</option>
+                <option value="SFO">San Francisco, CA, USA</option>
+                <option value="SEA">Seattle, WA, USA</option>
+                <option value="WAT">Waterloo, Ontario, Canada</option>
+                <option value="ZRH">Zürich, Switzerland</option>
+                <option class="custom" value="other">Other</option>
+              </select>
+              <input class="customOption" style="display:none;" />
+            </div>
+          </div>
+          <div class="12u$">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <input type="checkbox" id="optout" name="optout">
+            <label id="optlabel" for="optout"></label>
+          </div>
+          <div class="12u$ align-right">
+            <ul class="actions">
+              <li>
+                <input type="button" id="accept" value="Submit" class="special" />
+              </li>
+              <li>
+                <input type="reset" value="Reset" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Begin Panel 2: Category Select -->
+    <div id="page2" style="display:none;">
+      <header>
+        <h2 class="align-center">Choose Your Categories</h2>
+        <p><strong>The Basics</strong>: You have two (2) minutes to answer as many questions as possible. The more questions you answer correctly, the harder the questions become. Every incorrect answer costs you 10 seconds. The more answers you miss, the less time you have. Only your FIRST submitted score is eligible. Please refer to the FAQ for more details.</p>
+      </header>
+      <form id="categories">
+        <div class="row uniform" id="cat_select">
+          <div class="12u$">
+            <ul class="actions">
+              <li>
+                <input type="button" id="start" value="Start Game" class="special" />
+              </li>
+              <li>
+                <input type="reset" value="Reset" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Begin Panel 3: Question Display -->
+    <div id="question" style="display:none;">
+      <header>
+        <h3>
+          <div class="row uniform" id="top_stats">
+            <div class="4u difficulty">Difficulty: &nbsp;<span id="diff_num">1</span></div>
+            <div class="4u align-center">Score: &nbsp;<span id="score_num">0</span><span id="score_modifier"></span></div>
+            <div class="4u align-right streak">Streak: &nbsp;<span id="streak_num">0</span></div>
+            <div id="status_display" class="12u$ align-center">Begin!</div>
+          </div>
+        </h3>
+        <h2 id="timer" class="align-center"></h2>
+        <p id="qText"></p>
+      </header>
+      <div id="answerSet">
+        <div class="row uniform"></div>
+        <div class="row uniform"></div>
+      </div>
+    </div>
+    <!-- Begin End Panel: Display Stats for Game and Request Submit -->
+    <div id="end" style="display:none;">
+      <header>
+        <h2 class="align-center">Game Over</h2>
+      </header>
+      <form id="game_end">
+        <div class="row uniform">
+          <div class="12u$">
+            <div class="table-wrapper stats">
+              <table class="alt">
+                <tfoot>
+                <td class="last-child">Your Score</td>
+                  <td id="score" class="last-child"></td>
+                    </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Total Questions</td>
+                    <td id="totalQ"></td>
+                  </tr>
+                  <tr>
+                    <td>Correct Answers</td>
+                    <td id="right"></td>
+                  </tr>
+                  <tr>
+                    <td>Wrong Answers</td>
+                    <td id="wrong"></td>
+                  </tr>
+                  <tr>
+                    <td>Longest Streak</td>
+                    <td id="streak"></td>
+                  </tr>
+                  <tr>
+                    <td>Highest Difficulty</td>
+                    <td id="diff"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Begin Success Panel on Score Submission -->
+          <div class="12u$ align-right">
+            <ul class="actions">
+              <li>
+              <form>
+                <input type="button" id="finish" value="Submit Score" class="special" />
+              </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="confirmation" style="display:none;">
+      <h2 class="align-center">Score Submitted!</h2>
+      <div class="row uniform">
+        <div class="12u$ align-center">
+          <ul class="actions">
+            <li><a href="/game" class="button special fit">Play Again</a></li>
+            <li><a href="/profile" class="button special fit">View Profile</a></li>
+          </ul>
+        </div>
+        <div class="12u$ align-center" id="rating" style="display:none;">
+          <h3>Rate the Game</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script> 
+<script src="src/util.js"></script> 
+<script src="src/main.js"></script> 
+<script src="src/game.js"></script>

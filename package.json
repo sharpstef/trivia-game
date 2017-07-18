@@ -1,0 +1,39 @@
+{
+  "name": "trivia-io",
+  "description": "Trivia Game on App Engine and Datastore on GCP",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "contributors": [{
+      "name": "Stefania Kaczmarczyk"
+  },
+  {
+      "name": "Spencer Tofts"
+  }],
+  "engines": {
+    "node": "~6.10"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "deploy": "gcloud app deploy"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-session":"1.15.2",
+    "express-ws":"3.0.0",
+    "express-handlebars":"3.0.0",
+    "request": "2.81.0",
+    "request":"2.81.0",
+    "cookie-parser":"1.4.3",
+    "body-parser": "1.17.1",
+    "passport":"0.3.2",
+    "passport-google-oauth20": "1.0.0",
+    "connect-ensure-login":"0.1.1",
+    "connect-memcached": "~0.2.0",
+    "morgan":"1.8.1",
+    "helmet":"*",
+    "csurf":"*",
+    "google-spreadsheet":"2.0.3",
+    "async":"2.4.0",
+	"@google-cloud/datastore":"*"
+  }
+}

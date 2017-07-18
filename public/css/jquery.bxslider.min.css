@@ -1,0 +1,69 @@
+/*
+  Copyright 2017 Google Inc.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
+.bx-wrapper {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}
+.bx-wrapper img {
+    max-width: 100%;
+    display: block;
+}
+.bxslider {
+    margin: 0;
+    padding: 0;
+}
+ul.bxslider {
+    list-style: none;
+}
+.bx-viewport {
+    -webkit-transform: translatez(0);
+}
+.bx-wrapper .bx-controls-auto, .bx-wrapper .bx-pager {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+}
+.bx-wrapper .bx-loading {
+    min-height: 50px;
+    background: url(images/bx_loader.gif) center center no-repeat #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+.bx-wrapper .bx-prev {
+    left: 10px;
+}
+.bx-wrapper .bx-next {
+    right: 10px;
+}
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    bottom: 50%;
+    outline: 0;
+    border: none;
+    text-decoration: none;
+    font-size: 1.4em;
+    z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a:hover {
+    color: #FFD500;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+    display: none;
+}

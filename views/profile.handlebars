@@ -1,0 +1,54 @@
+<section id="content" class="wrapper-alt">
+    <header>
+      <h2 class="align-center">Profile</h2>
+    </header>
+    <!-- List of username, location, and optout - Currently can't edit fields -->
+    <form>
+    <div class="row uniform">
+      <div class="6u 12u$(xsmall)">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" value="" />
+      </div>
+      <div class="6u 12u$(xsmall)">
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="" disabled />
+      </div>
+      <div class="6u 12u$(xsmall)">
+        <input type="checkbox" id="optout" name="optout" />
+        <label for="optout">Opt-Out</label>
+        <ul class="actions">
+          <li>
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <input type="button" id="update_user" value="Update" class="special" />
+          </li>
+        </ul>
+        <span id="message"></span> </div>
+    </div>
+    </form>
+    <div class="row uniform">
+      <div class="6u 12u$(xsmall)">
+        <h3>Contest Score: <span id="contestScore"></span></h3>
+      </div>
+      <div class="6u 12u$(xsmall)">
+        <h3>Highest Score: <span id="highScore"></span></h3>
+      </div>
+    </div>
+    <!-- Section for medals for all categories they have attemped and submitted scores for -->
+    <h3 id="catLabel">Categories:</h3>
+    <div id="medal_one" class="row uniform"> </div>
+    <div id="medal_two" class="row uniform"> </div>
+    <!-- List of previous games -->
+    <div class="row uniform">
+      <div class="12u$">
+        <div class="table-wrapper stats">
+          <table class="alt" id="game">
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script> 
+<script src="src/util.js"></script> 
+<script src="src/main.js"></script> 
+<script src="src/profile.js"></script>
